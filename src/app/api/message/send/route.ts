@@ -51,7 +51,7 @@ export async function POST(req: Request) {
 
     // notify all connected chat room clients
     pusherServer.trigger(
-      toPusherKey(`user:${chatId}`), // channel
+      toPusherKey(`chat:${chatId}`), // channel
       'incoming_message', // event
       message // data that is being sent
     )
