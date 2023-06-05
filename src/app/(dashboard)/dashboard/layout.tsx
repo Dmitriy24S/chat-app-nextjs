@@ -50,7 +50,7 @@ const Layout = async ({ children }: LayoutProps) => {
   return (
     <div className='flex h-screen w-full'>
       <div className='hidden h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white p-6 pb-1 md:flex'>
-        <Link href='/dashboard' className='flex h-16 shrink-0 items-center'>
+        <Link href='/dashboard' className='flex shrink-0 items-center'>
           <Icons.Logo className='h-8 w-auto text-indigo-600' />
         </Link>
 
@@ -74,7 +74,7 @@ const Layout = async ({ children }: LayoutProps) => {
                     <li key={option.id}>
                       <Link
                         href={option.href}
-                        className='group flex gap-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600'
+                        className='group flex gap-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 -outline-offset-4 hover:bg-gray-50 hover:text-indigo-600'
                       >
                         <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600'>
                           <Icon className='h-4 w-4' />
