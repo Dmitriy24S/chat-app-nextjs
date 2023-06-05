@@ -51,7 +51,7 @@ const Chat = async ({ params }: PageProps) => {
         <div className='relative flex items-center space-x-4'>
           {/* Profile pic */}
           <div className='relative'>
-            <div className='relative h-8 w-8 rounded-full bg-gray-50 sm:h-12 sm:w-12 '>
+            <div className='relative h-8 w-8 rounded-full bg-gray-100 sm:h-12 sm:w-12 '>
               {/* // ! */}
               {chatPartner.image && (
                 <Image

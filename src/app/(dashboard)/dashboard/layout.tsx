@@ -97,7 +97,7 @@ const Layout = async ({ children }: LayoutProps) => {
             <li className='-mx-6 mt-auto flex items-center pr-1'>
               <div className='flex flex-1 items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900'>
                 {/* User Image */}
-                <div className='relative h-8 w-8 bg-gray-50'>
+                <div className='relative h-8 w-8 rounded-full bg-gray-100'>
                   {session.user.image && (
                     <Image
                       fill

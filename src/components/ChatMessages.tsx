@@ -85,17 +85,26 @@ const ChatMessages = ({
 
               {/* Message user img */}
               <div
-                className={cn('relative h-6 w-6 rounded-full bg-gray-50', {
+                className={cn('relative h-6 w-6 rounded-full bg-gray-100', {
                   'order-2': isCurrentUser,
                   'order-1': !isCurrentUser,
                   invisible: hasNextMessageFromSameUser,
                 })}
               >
-                {/* google img default fallback */}
-                {(chatPartner.image || (isCurrentUser && sessionUserImg)) && (
+                {/* google img default fallbacks */}
+                {!isCurrentUser && chatPartner.image && (
                   <Image
                     fill
-                    src={isCurrentUser ? (sessionUserImg as string) : chatPartner.image}
+                    src={chatPartner.image}
+                    alt='Profile picture'
+                    referrerPolicy='no-referrer'
+                    className='rounded-full'
+                  />
+                )}
+                {isCurrentUser && sessionUserImg && (
+                  <Image
+                    fill
+                    src={sessionUserImg}
                     alt='Profile picture'
                     referrerPolicy='no-referrer'
                     className='rounded-full'
