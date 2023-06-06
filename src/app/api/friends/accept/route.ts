@@ -15,8 +15,6 @@ export async function POST(req: Request) {
       return new Response('Unauthorized', { status: 401 })
     }
 
-    console.log('11111')
-
     // verify both users are not already friends
     const isAlreadyFriends = await fetchRedis(
       'sismember',
@@ -28,7 +26,6 @@ export async function POST(req: Request) {
       return new Response('Already friends', { status: 400 })
     }
 
-    console.log('222222')
     console.log('sismember', `user:${session.user.id}:incoming_friend_requests`, idToAdd)
 
     // verify that the user has a pending friend request to accept
