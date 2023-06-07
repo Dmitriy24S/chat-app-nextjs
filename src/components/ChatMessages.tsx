@@ -34,12 +34,18 @@ const ChatMessages = ({
   }
 
   useEffect(() => {
-    pusherClient.subscribe(toPusherKey(`chat:${chatId}`))
-    pusherClient.bind('incoming_message', incomingMessageHandler)
+    const subscribeData = async () => {
+      await pusherClient.subscribe(toPusherKey(`chat:${chatId}`))
+      await pusherClient.bind('incoming_message', incomingMessageHandler)
+    }
+    subscribeData()
 
     return () => {
-      pusherClient.unsubscribe(toPusherKey(`chat:${chatId}`))
-      pusherClient.unbind('incoming_message', incomingMessageHandler)
+      const unnubscribeData = async () => {
+        await pusherClient.unsubscribe(toPusherKey(`chat:${chatId}`))
+        await pusherClient.unbind('incoming_message', incomingMessageHandler)
+      }
+      unnubscribeData()
     }
   }, [chatId])
 

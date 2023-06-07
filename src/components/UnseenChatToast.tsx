@@ -34,14 +34,16 @@ const UnseenChatToast = ({
       >
         <div className='flex items-start'>
           <div className='flex-shrink-0 pt-0.5'>
-            <div className='relative h-10 w-10'>
-              <Image
-                fill
-                referrerPolicy='no-referrer'
-                className='rounded-full'
-                src={senderImg}
-                alt={`${senderName} profile picture`}
-              />
+            <div className='relative h-10 w-10 rounded-full bg-gray-100'>
+              {senderImg && (
+                <Image
+                  fill
+                  referrerPolicy='no-referrer'
+                  className='rounded-full'
+                  src={senderImg}
+                  alt={`${senderName} profile picture`}
+                />
+              )}
             </div>
           </div>
 

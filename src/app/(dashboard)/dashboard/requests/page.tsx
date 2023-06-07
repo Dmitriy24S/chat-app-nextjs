@@ -30,14 +30,14 @@ const Requests = async () => {
 
   return (
     <main className='p-4 pt-8'>
-      <h1 className='mb-8 text-5xl font-bold'>Pending friend requests</h1>
+      <h1 className='mb-8 text-5xl font-bold'>Friend requests</h1>
       <div className='flex flex-col gap-4'>
         <FriendRequests
           incomingFriendRequests={incomingFriendRequests}
           sessionId={session.user.id}
         />
       </div>
-      <AddFriendButton />
+      {/* <AddFriendButton /> */}
     </main>
   )
 }

@@ -30,6 +30,8 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
       toast.error('Something went wrong. Please try again later.')
     } finally {
       setIsLoading(false)
+      setInput('')
+      textareaRef.current?.focus()
     }
   }
 
@@ -42,8 +44,8 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
             if (e.key === 'Enter' && !e.shiftKey) {
               e.preventDefault()
               sendMessage() // ! Promises must be awaited, end with a call to .catch, or end with a call to .then with a rejection handler.sonarlint(typescript:S6544)
-              setInput('')
-              textareaRef.current?.focus()
+              // setInput('')
+              // textareaRef.current?.focus()
             }
           }}
           rows={1}
