@@ -29,23 +29,17 @@ const ChatMessages = ({
   }
 
   const incomingMessageHandler = (message: IMessage) => {
-    console.log('incomingMessageHandler - new message')
+    console.log('incomingMessageHandler - new message - ', message)
     setMessages((prev) => [message, ...prev])
   }
 
   useEffect(() => {
-    const subscribeData = async () => {
-      await pusherClient.subscribe(toPusherKey(`chat:${chatId}`))
-      await pusherClient.bind('incoming_message', incomingMessageHandler)
-    }
-    subscribeData()
+    pusherClient.subscribe(toPusherKey(`chat:${chatId}`))
+    pusherClient.bind('incoming_message', incomingMessageHandler)
 
     return () => {
-      const unnubscribeData = async () => {
-        await pusherClient.unsubscribe(toPusherKey(`chat:${chatId}`))
-        await pusherClient.unbind('incoming_message', incomingMessageHandler)
-      }
-      unnubscribeData()
+      pusherClient.unsubscribe(toPusherKey(`chat:${chatId}`))
+      pusherClient.unbind('incoming_message', incomingMessageHandler)
     }
   }, [chatId])
 
