@@ -1,6 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat App
+
+![Design preview for Chat App](./design-preview/design-preview.png)
+
+Chat App. Created with NextJS, CSS, Tailwind CSS, headlessUI, Pusher, axios, clsx, cva, tailwind-merge, date-fns, encoding, nanoid, lucide, next auth, pusher, react hook form, zod, react hot toast, react-loading-skeleton, react-textarea-autosize.
+
+[Live Demo](https://chat-app-nextjs-peach.vercel.app/dashboard) 👈
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
